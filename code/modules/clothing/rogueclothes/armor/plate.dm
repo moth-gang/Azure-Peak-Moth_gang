@@ -244,7 +244,8 @@
 	allowed_race = NON_DWARVEN_RACE_TYPES
 	detail_tag = "_detail"
 	color = "#FFFFFF"
-	detail_color = "#282e83"
+	detail_color = "#5058c1"
+	var/swapped_color // holder for corset colour when the corset is toggled off.
 
 /obj/item/clothing/suit/roguetown/armor/plate/otavan/update_icon()
 	cut_overlays()
@@ -264,6 +265,8 @@
 			body_parts_covered = CHEST|GROIN|VITALS
 			flags_cover = null
 			emote_environment = 0
+			swapped_color = detail_color
+			detail_color = "#ffffff"
 			update_icon()
 			if(ishuman(user))
 				var/mob/living/carbon/H = user
@@ -271,6 +274,7 @@
 			block2add = null
 		else if(adjustable == CADJUSTED)
 			ResetAdjust(user)
+			detail_color = swapped_color
 			emote_environment = 3
 			update_icon()
 			if(user)
