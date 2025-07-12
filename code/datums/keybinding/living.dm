@@ -4,8 +4,8 @@
 
 
 /datum/keybinding/living/swap_left
-	hotkey_keys = list("Q")
-	classic_keys = list("Q") // PAGEUP
+	hotkey_keys = list()
+	classic_keys = list() // PAGEUP
 	name = "swap_left"
 	full_name = "Swap to left hand"
 	description = ""
@@ -25,8 +25,8 @@
 	return TRUE
 
 /datum/keybinding/living/swap_right
-	hotkey_keys = list("E")
-	classic_keys = list("E") // PAGEUP
+	hotkey_keys = list()
+	classic_keys = list() // PAGEUP
 	name = "swap_right"
 	full_name = "Swap to right hand"
 	description = ""
@@ -46,7 +46,7 @@
 	return TRUE
 
 /datum/keybinding/living/swap_hands
-	hotkey_keys = list()
+	hotkey_keys = list("X")
 	classic_keys = list()
 	name = "swap_hands"
 	full_name = "Swap hands"
@@ -62,7 +62,7 @@
 	return TRUE
 
 /datum/keybinding/living/activate_inhand
-	hotkey_keys = list()
+	hotkey_keys = list("Z")
 	classic_keys = list()
 	name = "activate_inhand"
 	full_name = "Activate in-hand"
@@ -78,7 +78,7 @@
 
 
 /datum/keybinding/living/drop_item
-	hotkey_keys = list("Z")
+	hotkey_keys = list("Q")
 	name = "drop_item"
 	full_name = "Drop Item"
 	description = ""
@@ -144,7 +144,7 @@
 
 
 /datum/keybinding/living/resist
-	hotkey_keys = list("X")
+	hotkey_keys = list("B")
 	name = "cancelresist"
 	full_name = "Cancel/Resist"
 	description = "Stop an action such as a charged attack or spam this to resist against a grab."
