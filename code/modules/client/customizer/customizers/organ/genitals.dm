@@ -323,8 +323,8 @@
 /datum/customizer_choice/organ/breasts/animal
 	sprite_accessories = list(
 		/datum/sprite_accessory/breasts/pair,
-		/datum/sprite_accessory/breasts/quad,
-		/datum/sprite_accessory/breasts/sextuple,
+//		/datum/sprite_accessory/breasts/quad,
+//		/datum/sprite_accessory/breasts/sextuple,
 		)
 
 /datum/customizer/organ/vagina
