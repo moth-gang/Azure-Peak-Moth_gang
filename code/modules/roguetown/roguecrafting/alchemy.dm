@@ -66,14 +66,14 @@
 	result = list(/obj/item/quicksilver = 1)
 	reqs = list(/obj/item/reagent_containers/food/snacks/grown/rogue/fyritius/bloodied = 1, /datum/reagent/water/blessed = 45, /obj/item/natural/cloth = 1, /obj/item/alch/silverdust = 1)
 	craftdiff = 4
-
+/*
 /datum/crafting_recipe/roguetown/alchemy/transisdust
 	name = "sui dust"
 	category = "Table"
 	result = list(/obj/item/alch/transisdust)
 	reqs = list(/obj/item/herbseed/taraxacum = 1, /obj/item/herbseed/euphrasia = 1, /obj/item/herbseed/hypericum = 1, /obj/item/herbseed/salvia = 1)
 	craftdiff = 3
-
+*/
 //Hard to craft but feasable, will give ONE vial but that has 10 units so, enough to cure 2 people if they ration it.
 /datum/crafting_recipe/roguetown/alchemy/curerot
 	name = "rot cure potion"
