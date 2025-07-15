@@ -2466,4 +2466,5 @@
 #include "modular_hearthstone\code\modules\mob\living\simple_animal\rogue\rogue_corpse.dm"
 #include "modular_hearthstone\code\modules\reagents\reagent_containers\lux.dm"
 #include "modulargoonpeak\modules\armor\code\armor.dm"
+#include "modulargoonpeak\modules\armor\code\pants.dm"
 // END_INCLUDE
