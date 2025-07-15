@@ -22,7 +22,7 @@
 				else
 					return "slit_2"
 	if(pp.erect_state == ERECT_STATE_HARD)
-		return "[icon_state]_[pp.penis_size]_erect"
+		return "[icon_state]_[pp.penis_size]_erect" // AP edit
 	else
 		return "[icon_state]_[pp.penis_size]"
 
