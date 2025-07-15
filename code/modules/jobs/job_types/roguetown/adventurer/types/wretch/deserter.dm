@@ -54,7 +54,8 @@
 				"Longsword + Shield", 
 				"Lucerne",
 				"Battle Axe",
-				"Lance + Kite Shield"
+				"Lance + Kite Shield",
+				"Samshir",
 			)
 			var/weapon_choice = input("Choose your weapon.", "TAKE UP ARMS") as anything in weapons
 			H.set_blindness(0)
@@ -79,6 +80,8 @@
 				if("Lance + Kite Shield")
 					r_hand = /obj/item/rogueweapon/spear/lance
 					backr = /obj/item/rogueweapon/shield/tower/metal
+				if("Samshir")
+					r_hand = /obj/item/rogueweapon/sword/sabre/shamshir
 			var/helmets = list(
 				"Pigface Bascinet" 	= /obj/item/clothing/head/roguetown/helmet/bascinet/pigface,
 				"Guard Helmet"		= /obj/item/clothing/head/roguetown/helmet/heavy/guard,
@@ -90,6 +93,7 @@
 				"Hounskull Bascinet" 		= /obj/item/clothing/head/roguetown/helmet/bascinet/pigface/hounskull,
 				"Etruscan Bascinet" 		= /obj/item/clothing/head/roguetown/helmet/bascinet/etruscan,
 				"Slitted Kettle"		= /obj/item/clothing/head/roguetown/helmet/heavy/knight/skettle,
+				"Kulah Khud"	= /obj/item/clothing/head/roguetown/helmet/sallet/raneshen,
 				"None"
 			)
 			var/helmchoice = input("Choose your Helm.", "TAKE UP HELMS") as anything in helmets
@@ -101,6 +105,7 @@
 				"Coat of Plates"	= /obj/item/clothing/suit/roguetown/armor/brigandine/coatplates,
 				"Steel Cuirass"		= /obj/item/clothing/suit/roguetown/armor/plate/half,				
 				"Fluted Cuirass"	= /obj/item/clothing/suit/roguetown/armor/plate/half/fluted,
+				"Scalemail"		= /obj/item/clothing/suit/roguetown/armor/plate/scale,
 			)
 			var/armorchoice = input("Choose your armor.", "TAKE UP ARMOR") as anything in armors
 			armor = armors[armorchoice]

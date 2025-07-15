@@ -390,7 +390,10 @@
 
 /datum/crafting_recipe/roguetown/survival/woodshaft
 	name = "wood shaft x2"
-	result = /obj/item/shaft/wood
+	result = list(
+		/obj/item/shaft/wood,
+		/obj/item/shaft/wood
+	)
 	tools = list(/obj/item/rogueweapon/huntingknife)
 	reqs = list(/obj/item/grown/log/tree/small = 1)
 	skillcraft = /datum/skill/craft/carpentry
