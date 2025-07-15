@@ -33,6 +33,11 @@
 	if(oldstate != erect_state && owner)
 		owner.update_body_parts(TRUE)
 
+/obj/item/organ/penis/human
+	name = "human penis"
+	penis_type = PENIS_TYPE_PLAIN
+	sheath_type = SHEATH_TYPE_NORMAL
+
 /obj/item/organ/penis/knotted
 	name = "knotted penis"
 	penis_type = PENIS_TYPE_KNOTTED
