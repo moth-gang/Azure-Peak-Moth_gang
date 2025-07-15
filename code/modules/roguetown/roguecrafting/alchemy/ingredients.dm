@@ -221,7 +221,7 @@
 	major_pot = /datum/alch_cauldron_recipe/big_stamina_potion
 	med_pot = /datum/alch_cauldron_recipe/lck_potion
 	minor_pot = /datum/alch_cauldron_recipe/int_potion
-
+/*
 /obj/item/alch/transisdust
 	name = "sui dust"
 	desc = "A long mix of herbs resulting in a special dust. For you. Use it while held."
@@ -251,7 +251,7 @@
 	user.regenerate_icons()
 	to_chat(user, span_notice("Tis' complete."))
 	qdel(src)
-
+*/
 /obj/item/alch/puresalt
 	name = "purified salts"
 	desc = "Salts that have been finely sifted to enchance their healing properties and to bolster its connection to the arcyne."
