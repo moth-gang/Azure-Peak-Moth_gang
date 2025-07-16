@@ -18,7 +18,7 @@
 	if(. && iscarbon(user))
 		var/mob/living/carbon/C = user
 		if(C.silent || !C.can_speak())
-			message = "издает шум. Слезы стекают по лицу."
+			message = "издает сдавленный звук. Слезы стекают по лицу."
 
 
 /datum/emote/living/carbon/human/sexmoanlight
@@ -85,17 +85,10 @@
 
 /datum/emote/living/carbon/human/handshake
 	key = "handshake"
-	message = "пожимает свою же рукуs."
+	message = "пожимает свою же руку."
 	message_param = "пожимает руку %t."
 	restraint_check = TRUE
 	emote_type = EMOTE_AUDIBLE
-
-	/mob/living/carbon/human/verb/emote_handshake()
-	set name = "Пожать руку"
-	set category = "Emotes"
-
-	emote("grumble", intentional = TRUE)
-
 
 /datum/emote/living/carbon/human/mumble
 	key = "mumble"
