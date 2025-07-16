@@ -6,7 +6,7 @@
 /datum/emote/living/blush
 	key = "blush"
 	key_third_person = "краснеет"
-	message = "краснеет..."
+	message = "краснеет."
 
 /datum/emote/living/pray
 	key = "pray"
@@ -184,8 +184,8 @@
 
 /datum/emote/living/clearthroat
 	key = "clearthroat"
-	key_third_person = "прокашливаться"
-	message = "прокашливаться."
+	key_third_person = "прокашливается"
+	message = "прокашливается."
 	message_muffled = "издает приглушенный звук."
 	emote_type = EMOTE_AUDIBLE
 	show_runechat = FALSE
@@ -311,15 +311,15 @@
 
 /datum/emote/living/gasp
 	key = "gasp"
-	key_third_person = "ловит воздух"
-	message = "ловит воздух!"
+	key_third_person = "ахает"
+	message = "ахает!"
 	message_muffled = "издает приглушенный звук."
 	emote_type = EMOTE_AUDIBLE
 	stat_allowed = UNCONSCIOUS
 	show_runechat = FALSE
 
 /mob/living/carbon/human/verb/emote_gasp()
-	set name = "Ловить воздух"
+	set name = "Ахнуть"
 	set category = "Noises"
 
 	emote("gasp", intentional = TRUE)
@@ -449,7 +449,7 @@
 /datum/emote/living/kiss
 	key = "kiss"
 	key_third_person = "целует"
-	message = "Делает воздушный поцелуй."
+	message = "посылает воздушный поцелуй."
 	message_param = "целует %t."
 	emote_type = EMOTE_VISIBLE
 
