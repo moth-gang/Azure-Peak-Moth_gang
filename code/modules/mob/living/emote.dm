@@ -1736,7 +1736,7 @@
 		set category = "Noises"
 		emote("flutter", intentional = TRUE)
 	else
-		to_chat(usr, span_warning("Your back doesn't do that"))
+		to_chat(usr, span_warning("Твоя спина не способна на это!"))
 		return
 
 /datum/emote/living/fsalute
