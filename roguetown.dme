@@ -2470,4 +2470,6 @@
 #include "modulargoonpeak\modules\translite\code\emote.dm"
 #include "modulargoonpeak\modules\translite\code\emote_c.dm"
 #include "modulargoonpeak\modules\translite\code\emote_h.dm"
+#include "modulargoonpeak\modules\sexcon\code\genitals.dm"
+#include "modulargoonpeak\modules\sexcon\code\sexcon.dm"
 // END_INCLUDE

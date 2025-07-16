@@ -1389,8 +1389,8 @@
 
 /datum/emote/living/hoot
 	key = "hoot"
-	key_third_person = "Уву!"
-	message = "Уву!"
+	key_third_person = "Уху!"
+	message = "Уху!"
 	emote_type = EMOTE_AUDIBLE | EMOTE_VISIBLE
 	message_muffled = "издает приглушенный звук!"
 	vary = TRUE
@@ -1399,7 +1399,7 @@
 
 /mob/living/carbon/human/verb/emote_hoot()
 	if(istype(usr.getorganslot(ORGAN_SLOT_TONGUE), /obj/item/organ/tongue/wild_tongue))
-		set name = "Увукнуть (как сова)"
+		set name = "Ухукнуть (как сова)"
 		set category = "Noises"
 		emote("hoot", intentional = TRUE, animal = TRUE)
 	else
