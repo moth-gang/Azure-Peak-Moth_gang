@@ -38,7 +38,7 @@
 			H.dna.species.soundpack_m = new /datum/voicepack/male/warrior()
 			H.set_blindness(0)
 			ADD_TRAIT(H, TRAIT_MEDIUMARMOR, TRAIT_GENERIC)
-			var/weapons = list("Longsword","Mace","Billhook","Battle Axe","Short Sword & Iron Shield")
+			var/weapons = list("Longsword","Mace","Billhook","Battle Axe","Short Sword & Iron Shield","Iron Saber & Wood Shield")
 			var/weapon_choice = input("Choose your weapon.", "TAKE UP ARMS") as anything in weapons
 			switch(weapon_choice)
 				if("Longsword")
@@ -59,7 +59,10 @@
 					H.adjust_skillrank(/datum/skill/combat/shields, 1, TRUE)
 					backr = /obj/item/rogueweapon/shield/iron
 					beltr = /obj/item/rogueweapon/sword/iron/short
-			var/armors = list("Chainmaille Set","Iron Breastplate","Gambeson & Helmet")
+				if("Iron Saber & Wood Shield")
+					beltr = /obj/item/rogueweapon/sword/iron/saber
+					backr = /obj/item/rogueweapon/shield/wood
+			var/armors = list("Chainmaille Set","Iron Breastplate","Gambeson & Helmet","Light Naledian Armor")
 			var/armor_choice = input("Choose your armor.", "TAKE UP ARMOR") as anything in armors
 			switch(armor_choice)
 				if("Chainmaille Set")
@@ -75,6 +78,11 @@
 					shirt = /obj/item/clothing/suit/roguetown/armor/gambeson
 					pants = /obj/item/clothing/under/roguetown/trou/leather
 					head = /obj/item/clothing/head/roguetown/helmet/kettle
+					gloves = /obj/item/clothing/gloves/roguetown/angle
+				if("Light Naledian Armor")
+					shirt = /obj/item/clothing/suit/roguetown/armor/gambeson/heavy/raneshen
+					pants = /obj/item/clothing/under/roguetown/trou/leather/pontifex/raneshen
+					head = /obj/item/clothing/head/roguetown/roguehood/shalal/hijab
 					gloves = /obj/item/clothing/gloves/roguetown/angle
 			H.change_stat("strength", 2)
 			H.change_stat("endurance", 1)

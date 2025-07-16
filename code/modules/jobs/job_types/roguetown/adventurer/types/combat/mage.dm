@@ -71,7 +71,6 @@
 			gloves = /obj/item/clothing/gloves/roguetown/angle
 			belt = /obj/item/storage/belt/rogue/leather
 			neck = /obj/item/clothing/neck/roguetown/chaincoif
-			armor = /obj/item/clothing/suit/roguetown/armor/leather/heavy/coat
 			backl = /obj/item/storage/backpack/rogue/satchel
 			beltl = /obj/item/storage/belt/rogue/pouch/coins/poor
 			wrists = /obj/item/clothing/wrists/roguetown/bracers/leather
@@ -98,19 +97,25 @@
 			H.cmode_music = 'sound/music/combat_bard.ogg'
 			ADD_TRAIT(H, TRAIT_MAGEARMOR, TRAIT_GENERIC)
 			ADD_TRAIT(H, TRAIT_ARCYNE_T2, TRAIT_GENERIC)
-			var/weapons = list("Bastard Sword", "Falchion & Wooden Shield", "Messer & Wooden Shield") // Much smaller selection with only three swords. You will probably want to upgrade.
+			var/weapons = list("Bastard Sword", "Falchion & Wooden Shield", "Messer & Wooden Shield", "Foreign Straight Sword") // Much smaller selection with only three swords. You will probably want to upgrade.
 			var/weapon_choice = input("Choose your weapon.", "TAKE UP ARMS") as anything in weapons
 			switch(weapon_choice)
 				if("Bastard Sword")
 					beltr = /obj/item/rogueweapon/sword/long
+					armor = /obj/item/clothing/suit/roguetown/armor/leather/heavy/coat
 				if("Falchion & Wooden Shield")
 					beltr = /obj/item/rogueweapon/sword/falchion
 					backr = /obj/item/rogueweapon/shield/wood
+					armor = /obj/item/clothing/suit/roguetown/armor/leather/heavy/coat
 					H.adjust_skillrank(/datum/skill/combat/shields, 1, TRUE)
 				if("Messer & Wooden Shield")
 					beltr = /obj/item/rogueweapon/sword/iron/messer
 					backr = /obj/item/rogueweapon/shield/wood
+					armor = /obj/item/clothing/suit/roguetown/armor/leather/heavy/coat
 					H.adjust_skillrank(/datum/skill/combat/shields, 1, TRUE)
+				if("Foreign Straight Sword")
+					beltr = /obj/item/rogueweapon/sword/sabre/mulyeog //needs to get a scabbard once the sheathening pr is merged - it should NOT receive the special one from the foreigner class
+					armor = /obj/item/clothing/suit/roguetown/armor/basiceast
 			switch(H.patron?.type)
 				if(/datum/patron/inhumen/zizo)
 					H.cmode_music = 'sound/music/combat_cult.ogg'

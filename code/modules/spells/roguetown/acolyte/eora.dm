@@ -94,7 +94,7 @@
 		target.apply_status_effect(/datum/status_effect/buff/druqks)
 		target.apply_status_effect(/datum/status_effect/buff/drunk)
 		target.visible_message("<span class='info'>A purple haze shrouds [target]!</span>", "<span class='notice'>I feel much calmer.</span>")
-		target.blur_eyes(10)
+		//target.blur_eyes(10)
 		return TRUE
 	revert_cast()
 	return FALSE
