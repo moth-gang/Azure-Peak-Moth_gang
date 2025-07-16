@@ -70,8 +70,7 @@
 	/obj/item/natural/dirtclod,
 	/obj/item/reagent_containers/glass/cup/wooden,
 	/obj/item/natural/glass,
-	/obj/item/clothing/shoes/roguetown/sandals,
-	/obj/item/alch/transisdust)
+	/obj/item/clothing/shoes/roguetown/sandals,)
 	
 /obj/effect/proc_holder/spell/self/check_boot/cast(list/targets, mob/user = usr)
 	. = ..()

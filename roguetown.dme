@@ -150,6 +150,7 @@
 #include "code\__DEFINES\dcs\signals_atoms\lighting.dm"
 #include "code\__DEFINES\dcs\signals_atoms\movable_lighting.dm"
 #include "code\__DEFINES\dcs\signals_atoms\signals_atom.dm"
+#include "code\__DEFINES\goonpeak\sexcon_defines.dm"
 #include "code\__DEFINES\mobs\simplemob_attack_speed.dm"
 #include "code\__DEFINES\mobs\simplemob_health.dm"
 #include "code\__DEFINES\mobs\simplemob_movement_speed.dm"

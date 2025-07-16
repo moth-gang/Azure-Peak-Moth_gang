@@ -543,7 +543,7 @@
 			update_icon()
 			return TRUE
 
-	if(istype(I, /obj/item/roguegem/ruby) || istype(I, /obj/item/alch/transisdust) || istype(I, /obj/item/reagent_containers/food/snacks/eoran_aril/opalescent))
+	if(istype(I, /obj/item/roguegem/ruby) || istype(I, /obj/item/reagent_containers/food/snacks/eoran_aril/opalescent))
 
 		if(I.type in tree_offerings)
 			to_chat(user, span_warning("This object has already been offered to the tree!"))
