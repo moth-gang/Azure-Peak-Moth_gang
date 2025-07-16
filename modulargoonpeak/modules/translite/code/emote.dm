@@ -1,24 +1,24 @@
-/* EMOTE DATUMS 
+/* EMOTE DATUMS */
 /datum/emote/living
 	mob_type_allowed_typecache = /mob/living
 	mob_type_blacklist_typecache = list(/mob/living/brain)
 
 /datum/emote/living/blush
 	key = "blush"
-	key_third_person = "blushes"
-	message = "blushes."
+	key_third_person = "краснеет"
+	message = "краснеет."
 
 /datum/emote/living/pray
 	key = "pray"
-	key_third_person = "prays"
-	message = "prays something."
+	key_third_person = "молится"
+	message = "шепчет молитву."
 	restraint_check = FALSE
 	emote_type = EMOTE_VISIBLE
 	// We let people pray unconcious for death-gasp style prayers in crit.
 	stat_allowed = list(CONSCIOUS, UNCONSCIOUS)
 
 /mob/living/carbon/human/verb/emote_pray()
-	set name = "Pray"
+	set name = "Молиться"
 	set category = "Emotes"
 
 	emote("pray", intentional = TRUE)
@@ -28,10 +28,10 @@
 	var/mob/living/carbon/follower = user
 	var/datum/patron/patron = follower.patron
 
-	var/prayer = input("Whisper your prayer:", "Prayer") as text|null
+	var/prayer = input("Прошепчи свою молитву:", "Молитва") as text|null
 	if(!prayer)
 		return
-	
+
 	//If God can hear your prayer (long enough, no bad words, etc.)
 	if(patron.hear_prayer(follower, prayer))
 		if(follower.has_flaw(/datum/charflaw/addiction/godfearing))
@@ -56,13 +56,13 @@
 
 /datum/emote/living/meditate
 	key = "meditate"
-	key_third_person = "meditates"
-	message = "meditates."
+	key_third_person = "медитирует"
+	message = "медитирует."
 	restraint_check = FALSE
 	emote_type = EMOTE_VISIBLE
 
 /mob/living/carbon/human/verb/emote_meditate()
-	set name = "Meditate"
+	set name = "Медитировать"
 	set category = "Emotes"
 
 	emote("meditate", intentional = TRUE)
@@ -75,9 +75,9 @@
 
 /datum/emote/living/bow
 	key = "bow"
-	key_third_person = "bows"
-	message = "bows."
-	message_param = "bows to %t."
+	key_third_person = "кланяется"
+	message = "кланяется."
+	message_param = "кланяется в сторону %t."
 	restraint_check = TRUE
 	emote_type = EMOTE_VISIBLE
 
@@ -93,56 +93,56 @@
 				H.add_stress(/datum/stressevent/noble_bowed_to)
 
 /mob/living/carbon/human/verb/emote_bow()
-	set name = "Bow"
+	set name = "Поклон"
 	set category = "Emotes"
 
 	emote("bow", intentional = TRUE)
 
 /datum/emote/living/burp
 	key = "burp"
-	key_third_person = "burps"
-	message = "burps."
-	message_muffled = "makes a muffled noise."
+	key_third_person = "рыгает"
+	message = "рыгает."
+	message_muffled = "издает приглушенный звук."
 	emote_type = EMOTE_AUDIBLE
 	show_runechat = FALSE
 
 /mob/living/carbon/human/verb/emote_burp()
-	set name = "Burp"
+	set name = "Рыгнуть"
 	set category = "Noises"
 
 	emote("burp", intentional = TRUE)
 
 /datum/emote/living/choke
 	key = "choke"
-	key_third_person = "chokes"
-	message = "chokes!"
+	key_third_person = "задыхается"
+	message = "задыхается!"
 	emote_type = EMOTE_AUDIBLE
 	ignore_silent = TRUE
 	show_runechat = FALSE
 
 /mob/living/carbon/human/verb/emote_choke()
-	set name = "Choke"
+	set name = "Задыхаться"
 	set category = "Noises"
 
 	emote("choke", intentional = TRUE)
 
 /datum/emote/living/cross
 	key = "crossarms"
-	key_third_person = "crossesarms"
-	message = "crosses their arms."
+	key_third_person = "cкладывает руки"
+	message = "складывает свои руки."
 	restraint_check = TRUE
 	emote_type = EMOTE_VISIBLE
 
 /mob/living/carbon/human/verb/emote_crossarms()
-	set name = "Cross Arms"
+	set name = "Сложить руки"
 	set category = "Emotes"
 
 	emote("crossarms", intentional = TRUE)
 
 /datum/emote/living/collapse
 	key = "collapse"
-	key_third_person = "collapses"
-	message = "collapses."
+	key_third_person = "теряет сознание"
+	message = "теряет сознание."
 	emote_type = EMOTE_AUDIBLE
 	show_runechat = FALSE
 
@@ -154,9 +154,9 @@
 
 /datum/emote/living/whisper
 	key = "whisper"
-	key_third_person = "whispers"
-	message = "whispers."
-	message_mime = "appears to whisper."
+	key_third_person = "шепчет"
+	message = "шепчет."
+	message_mime = "делает вид, что шепчет."
 	emote_type = EMOTE_AUDIBLE
 	show_runechat = FALSE
 
@@ -170,41 +170,41 @@
 
 /datum/emote/living/cough
 	key = "cough"
-	key_third_person = "coughs"
-	message = "coughs."
-	message_muffled = "makes a muffled noise."
+	key_third_person = "кашляет"
+	message = "кашляет."
+	message_muffled = "издает приглушенный звук."
 	emote_type = EMOTE_AUDIBLE
 	show_runechat = FALSE
 
 /mob/living/carbon/human/verb/emote_cough()
-	set name = "Cough"
+	set name = "Кашлять"
 	set category = "Noises"
 
 	emote("cough", intentional = TRUE)
 
 /datum/emote/living/clearthroat
 	key = "clearthroat"
-	key_third_person = "clearsthroat"
-	message = "clears their throat."
-	message_muffled = "makes a muffled noise."
+	key_third_person = "прокашливается"
+	message = "прокашливается."
+	message_muffled = "издает приглушенный звук."
 	emote_type = EMOTE_AUDIBLE
 	show_runechat = FALSE
 
 /mob/living/carbon/human/verb/emote_clearthroat()
-	set name = "Clear Throat"
+	set name = "Прокашляться"
 	set category = "Noises"
 
 	emote("clearthroat", intentional = TRUE)
 
 /datum/emote/living/dance
 	key = "dance"
-	key_third_person = "dances"
-	message = "dances."
+	key_third_person = "танцует"
+	message = "танцует."
 	restraint_check = TRUE
 	emote_type = EMOTE_VISIBLE
 
 /mob/living/carbon/human/verb/emote_dance()
-	set name = "Dance"
+	set name = "Танцевать"
 	set category = "Emotes"
 
 	emote("dance", intentional = TRUE)
@@ -212,8 +212,8 @@
 /datum/emote/living/deathgasp
 	key = ""
 	key_third_person = ""
-	message = "gasps out their last breath."
-	message_monkey = "lets out a faint chimper as it collapses and stops moving..."
+	message = "испускает последний вздох."
+	message_monkey = "издает слабый звук, падает и переставает двигаться..."
 	message_simple =  "falls limp."
 	stat_allowed = UNCONSCIOUS
 
@@ -232,24 +232,24 @@
 
 /datum/emote/living/drool
 	key = "drool"
-	key_third_person = "drools"
-	message = "drools."
+	key_third_person = "несёт чепуху"
+	message = "несёт чепуху."
 	emote_type = EMOTE_VISIBLE
 
 /mob/living/carbon/human/verb/emote_drool()
-	set name = "Drool"
+	set name = "Нести чепуху"
 	set category = "Emotes"
 
 	emote("drool", intentional = TRUE)
 
 /datum/emote/living/faint
 	key = "faint"
-	key_third_person = "faints"
-	message = "faints."
+	key_third_person = "теряет сознание"
+	message = "теряет сознание."
 	emote_type = EMOTE_VISIBLE
 
 /mob/living/carbon/human/verb/emote_faint()
-	set name = "Faint"
+	set name = "Обморок"
 	set category = "Emotes"
 
 	emote("faint", intentional = TRUE)
@@ -266,8 +266,8 @@
 
 /datum/emote/living/flap
 	key = "flap"
-	key_third_person = "flaps"
-	message = "flaps their wings."
+	key_third_person = "машет крыльями"
+	message = "машет крыльями."
 	restraint_check = TRUE
 	var/wing_time = 20
 
@@ -276,8 +276,8 @@
 
 /datum/emote/living/flap/aflap
 	key = "aflap"
-	key_third_person = "aflaps"
-	message = "flaps their wings ANGRILY!"
+	key_third_person = "машет крыльями!"
+	message = "ЗЛОБНО машет крыльями!"
 	restraint_check = TRUE
 	wing_time = 10
 
@@ -286,57 +286,57 @@
 
 /datum/emote/living/frown
 	key = "frown"
-	key_third_person = "frowns"
-	message = "frowns."
+	key_third_person = "хмурится"
+	message = "хмурится."
 	emote_type = EMOTE_VISIBLE
 /mob/living/carbon/human/verb/emote_frown()
-	set name = "Frown"
+	set name = "Хмуриться"
 	set category = "Emotes"
 
 	emote("frown", intentional = TRUE)
 
 /datum/emote/living/gag
 	key = "gag"
-	key_third_person = "gags"
-	message = "gags."
+	key_third_person = "давится"
+	message = "давится."
 	emote_type = EMOTE_AUDIBLE
 	ignore_silent = TRUE
 	show_runechat = FALSE
 
 /mob/living/carbon/human/verb/emote_gag()
-	set name = "Gag"
+	set name = "Подавиться"
 	set category = "Noises"
 
 	emote("gag", intentional = TRUE)
 
 /datum/emote/living/gasp
 	key = "gasp"
-	key_third_person = "gasps"
-	message = "gasps!"
-	message_muffled = "makes a muffled noise."
+	key_third_person = "ахает"
+	message = "ахает!"
+	message_muffled = "издает приглушенный звук."
 	emote_type = EMOTE_AUDIBLE
 	stat_allowed = UNCONSCIOUS
 	show_runechat = FALSE
 
 /mob/living/carbon/human/verb/emote_gasp()
-	set name = "Gasp"
+	set name = "Ахнуть"
 	set category = "Noises"
 
 	emote("gasp", intentional = TRUE)
 
 /datum/emote/living/breathgasp
 	key = "breathgasp"
-	key_third_person = "breathgasps"
-	message = "gasps for air!"
+	key_third_person = "задыхается"
+	message = "задыхается!"
 	emote_type = EMOTE_AUDIBLE
 	show_runechat = FALSE
 
 /datum/emote/living/giggle
 	key = "giggle"
-	key_third_person = "giggles"
-	message = "giggles."
-	message_mime = "giggles silently!"
-	message_muffled = "makes a muffled giggle."
+	key_third_person = "смеётся"
+	message = "смеётся."
+	message_mime = "слегка смеется!"
+	message_muffled = "издает приглушенный смех."
 	emote_type = EMOTE_AUDIBLE
 	show_runechat = FALSE
 
@@ -350,19 +350,19 @@
 				continue
 			if(HAS_TRAIT(H, TRAIT_XYLIX) && !H.has_status_effect(/datum/status_effect/buff/xylix_joy))
 				H.apply_status_effect(/datum/status_effect/buff/xylix_joy)
-				to_chat(H, span_info("The giggling brings a smile to my face, and fortune to my steps!"))
+				to_chat(H, span_info("Смех продливает жизнь!"))
 
 /mob/living/carbon/human/verb/emote_giggle()
-	set name = "Giggle"
+	set name = "Смеяться"
 	set category = "Noises"
 
 	emote("giggle", intentional = TRUE)
 
 /datum/emote/living/chuckle
 	key = "chuckle"
-	key_third_person = "chuckles"
-	message = "chuckles."
-	message_muffled = "makes a muffled chuckle."
+	key_third_person = "посмеивается"
+	message = "посмеивается."
+	message_muffled = "приглушенно посмеивается."
 	emote_type = EMOTE_AUDIBLE
 	show_runechat = FALSE
 
@@ -376,85 +376,85 @@
 				continue
 			if(HAS_TRAIT(H, TRAIT_XYLIX) && !H.has_status_effect(/datum/status_effect/buff/xylix_joy))
 				H.apply_status_effect(/datum/status_effect/buff/xylix_joy)
-				to_chat(H, span_info("The chuckling brings a smile to my face, and fortune to my steps!"))
+				to_chat(H, span_info("Смех продливает жизнь!"))
 
 /mob/living/carbon/human/verb/emote_chuckle()
-	set name = "Chuckle"
+	set name = "Издать смешок"
 	set category = "Noises"
 
 	emote("chuckle", intentional = TRUE)
 
 /datum/emote/living/glare
 	key = "glare"
-	key_third_person = "glares"
-	message = "glares."
-	message_param = "glares at %t."
+	key_third_person = "глядит"
+	message = "глядит."
+	message_param = "глядит на %t."
 	emote_type = EMOTE_VISIBLE
 
 /mob/living/carbon/human/verb/emote_glare()
-	set name = "Glare"
+	set name = "Глядеть"
 	set category = "Emotes"
 
 	emote("glare", intentional = TRUE)
 
 /datum/emote/living/grin
 	key = "grin"
-	key_third_person = "grins"
-	message = "grins."
+	key_third_person = "ухмыляется"
+	message = "ухмыляется."
 	emote_type = EMOTE_VISIBLE
 /mob/living/carbon/human/verb/emote_grin()
-	set name = "Grin"
+	set name = "Ухмыляться"
 	set category = "Emotes"
 
 	emote("grin", intentional = TRUE)
 
 /datum/emote/living/groan
 	key = "groan"
-	key_third_person = "groans"
-	message = "groans."
-	message_muffled = "makes a muffled groan."
+	key_third_person = "стонет"
+	message = "стонет."
+	message_muffled = "издает приглушенный стон."
 	emote_type = EMOTE_AUDIBLE
 	show_runechat = FALSE
 
 /mob/living/carbon/human/verb/emote_groan()
-	set name = "Groan"
+	set name = "Стонать"
 	set category = "Noises"
 
 	emote("groan", intentional = TRUE)
 
 /datum/emote/living/grimace
 	key = "grimace"
-	key_third_person = "grimaces"
-	message = "grimaces."
+	key_third_person = "корчит гримасу"
+	message = "корчит гримасу."
 	emote_type = EMOTE_VISIBLE
 /mob/living/carbon/human/verb/emote_grimace()
-	set name = "Grimace"
+	set name = "Корчить гримасу"
 	set category = "Emotes"
 
 	emote("grimace", intentional = TRUE)
 
 /datum/emote/living/jump
 	key = "jump"
-	key_third_person = "jumps"
-	message = "jumps!"
+	key_third_person = "прыгает"
+	message = "прыгает!"
 	restraint_check = TRUE
 
 /datum/emote/living/leap
 	key = "leap"
-	key_third_person = "leaps"
-	message = "leaps!"
+	key_third_person = "совершает скачок"
+	message = "совершает скачок!"
 	restraint_check = TRUE
 	only_forced_audio = TRUE
 
 /datum/emote/living/kiss
 	key = "kiss"
-	key_third_person = "kisses"
-	message = "blows a kiss."
-	message_param = "kisses %t."
+	key_third_person = "целует"
+	message = "посылает воздушный поцелуй."
+	message_param = "целует %t."
 	emote_type = EMOTE_VISIBLE
 
 /mob/living/carbon/human/verb/emote_kiss()
-	set name = "Kiss"
+	set name = "Поцеловать"
 	set category = "Emotes"
 
 	emote("kiss", intentional = TRUE, targetted = TRUE)
@@ -474,19 +474,19 @@
 				do_change = TRUE
 		if(do_change)
 			if(H.zone_selected == BODY_ZONE_PRECISE_MOUTH)
-				message_param = "kisses %t deeply."
+				message_param = "страстно целует %t."
 			else if(H.zone_selected == BODY_ZONE_PRECISE_EARS)
-				message_param = "kisses %t on the ear."
+				message_param = "целует %t в ухо."
 				var/mob/living/carbon/human/E = target
 				if(iself(E) || ishalfelf(E) || isdarkelf(E))
 					if(!E.cmode)
-						to_chat(target, span_love("It tickles..."))
+						to_chat(target, span_love("это щекотно..."))
 			else if(H.zone_selected == BODY_ZONE_PRECISE_R_EYE || H.zone_selected == BODY_ZONE_PRECISE_L_EYE)
-				message_param = "kisses %t on the brow."
+				message_param = "целует %t в бровь."
 			else if(H.zone_selected == BODY_ZONE_PRECISE_SKULL)
-				message_param = "kisses %t on the forehead."
+				message_param = "целует %t в лоб."
 			else
-				message_param = "kisses %t on \the [parse_zone(H.zone_selected)]."
+				message_param = "целует %t в \the [parse_zone(H.zone_selected)]."
 	playsound(target.loc, pick('sound/vo/kiss (1).ogg','sound/vo/kiss (2).ogg'), 100, FALSE, -1)
 	if(user.mind)
 		GLOB.azure_round_stats[STATS_KISSES_MADE]++
@@ -494,13 +494,13 @@
 
 /datum/emote/living/spit
 	key = "spit"
-	key_third_person = "spits"
-	message = "spits on the ground."
-	message_param = "spits on %t."
+	key_third_person = "плюёт"
+	message = "плюёт на пол."
+	message_param = "плюет на %t."
 	emote_type = EMOTE_VISIBLE
 
 /mob/living/carbon/human/verb/emote_spit()
-	set name = "Spit"
+	set name = "Плюнуть"
 	set category = "Emotes"
 
 	emote("spit", intentional = TRUE, targetted = TRUE)
@@ -512,7 +512,7 @@
 		var/mob/living/carbon/human/H = user
 		if(H.mouth)
 			if(H.mouth.spitoutmouth)
-				H.visible_message(span_warning("[H] spits out [H.mouth]."))
+				H.visible_message(span_warning("[H] выплёвывает [H.mouth]."))
 				H.dropItemToGround(H.mouth, silent = FALSE)
 			return
 	..()
@@ -529,14 +529,14 @@
 
 /datum/emote/living/hug
 	key = "hug"
-	key_third_person = "hugs"
+	key_third_person = "обнимает"
 	message = ""
-	message_param = "hugs %t."
+	message_param = "обнимает %t."
 	emote_type = EMOTE_VISIBLE
 	restraint_check = TRUE
 
 /mob/living/carbon/human/verb/emote_hug()
-	set name = "Hug"
+	set name = "Обнять"
 	set category = "Emotes"
 
 	emote("hug", intentional = TRUE, targetted = TRUE)
@@ -553,12 +553,12 @@
 
 /datum/emote/living/holdbreath
 	key = "hold"
-	key_third_person = "holds"
-	message = "begins to hold their breath."
+	key_third_person = "задерживает дыхание"
+	message = "задерживает дыхание."
 	stat_allowed = SOFT_CRIT
 
 /mob/living/carbon/human/verb/emote_hold()
-	set name = "Hold Breath"
+	set name = "Задержать дыхание"
 	set category = "Emotes"
 
 	emote("hold", intentional = TRUE)
@@ -566,7 +566,7 @@
 /datum/emote/living/holdbreath/can_run_emote(mob/living/user, status_check = TRUE, intentional)
 	. = ..()
 	if(. && intentional && !HAS_TRAIT(user, TRAIT_HOLDBREATH) && !HAS_TRAIT(user, TRAIT_PARALYSIS))
-		to_chat(user, span_warning("I'm not desperate enough to do that."))
+		to_chat(user, span_warning("Я не в таком отчаянии, чтобы делать это!."))
 		return FALSE
 
 /datum/emote/living/holdbreath/run_emote(mob/user, params, type_override, intentional)
@@ -580,13 +580,13 @@
 /datum/emote/living/holdbreath/select_message_type(mob/user, intentional)
 	. = ..()
 	if(HAS_TRAIT(user, TRAIT_HOLDBREATH))
-		. = "stops holding their breath."
+		. = "снова дышит."
 
 /datum/emote/living/slap
 	key = "slap"
-	key_third_person = "slaps"
+	key_third_person = "шлёпает"
 	message = ""
-	message_param = "slaps %t in the face."
+	message_param = "дает %t пощёчину."
 	emote_type = EMOTE_VISIBLE
 	restraint_check = TRUE
 
@@ -596,15 +596,15 @@
 	if(ishuman(user))
 		var/mob/living/carbon/human/H = user
 		if(H.zone_selected == BODY_ZONE_PRECISE_GROIN)
-			message_param = "slaps %t's ass!"
+			message_param = "шлепает %t по жопе!"
 		else if(H.zone_selected == BODY_ZONE_PRECISE_SKULL)
-			message_param = "slaps %t's head!"
+			message_param = "шлёпает голову %t!"
 		else if(H.zone_selected == BODY_ZONE_PRECISE_L_HAND || H.zone_selected == BODY_ZONE_PRECISE_R_HAND)
-			message_param = "slaps %t's hand!"
+			message_param = "шлёпает %t по руке!"
 	..()
 
 /mob/living/carbon/human/verb/emote_slap()
-	set name = "Slap"
+	set name = "Шлёпнуть"
 	set category = "Emotes"
 
 	emote("slap", intentional = TRUE, targetted = TRUE)
@@ -621,9 +621,9 @@
 
 /datum/emote/living/pinch
 	key = "pinch"
-	key_third_person = "pinches"
+	key_third_person = "щипает"
 	message = ""
-	message_param = "pinches %t."
+	message_param = "щипает %t."
 	emote_type = EMOTE_VISIBLE
 	restraint_check = TRUE
 
@@ -636,7 +636,7 @@
 		H.flash_fullscreen("redflash1")
 
 /mob/living/carbon/human/verb/emote_pinch()
-	set name = "Pinch"
+	set name = "Ущипнуть"
 	set category = "Emotes"
 
 	emote("pinch", intentional = TRUE, targetted = TRUE)
@@ -648,10 +648,10 @@
 
 /datum/emote/living/laugh
 	key = "laugh"
-	key_third_person = "laughs"
-	message = "laughs."
-	message_mime = "laughs silently!"
-	message_muffled = "makes a muffled laugh."
+	key_third_person = "смеется"
+	message = "смеется."
+	message_mime = "беззвучно смеется!"
+	message_muffled = "издает приглушенный смех."
 	emote_type = EMOTE_AUDIBLE
 	show_runechat = FALSE
 
@@ -671,37 +671,37 @@
 				continue
 			if(HAS_TRAIT(H, TRAIT_XYLIX) && !H.has_status_effect(/datum/status_effect/buff/xylix_joy))
 				H.apply_status_effect(/datum/status_effect/buff/xylix_joy)
-				to_chat(H, span_info("The laughter brings a smile to my face, and fortune to my steps!"))
+				to_chat(H, span_info("Смех продливает жизнь!"))
 
 /mob/living/carbon/human/verb/emote_laugh()
-	set name = "Laugh"
+	set name = "Рассмеяться"
 	set category = "Noises"
 
 	emote("laugh", intentional = TRUE)
 
 /datum/emote/living/look
 	key = "look"
-	key_third_person = "looks"
-	message = "stares blankly."
-	message_param = "looks at %t."
+	key_third_person = "пялится"
+	message = "пялится."
+	message_param = "пялится на %t."
 
 /datum/emote/living/nod
 	key = "nod"
-	key_third_person = "nods"
-	message = "nods."
-	message_param = "nods at %t."
+	key_third_person = "кивает"
+	message = "кивает."
+	message_param = "кивает в сторону %t."
 	emote_type = EMOTE_VISIBLE
 /mob/living/carbon/human/verb/emote_nod()
-	set name = "Nod"
+	set name = "Кивнуть"
 	set category = "Emotes"
 
 	emote("nod", intentional = TRUE)
 
 /datum/emote/living/point
 	key = "point"
-	key_third_person = "points"
-	message = "points."
-	message_param = "points at %t."
+	key_third_person = "показывает"
+	message = "показывает."
+	message_param = "показывает на %t."
 	restraint_check = TRUE
 
 /datum/emote/living/point/run_emote(mob/user, params, type_override, intentional)
@@ -710,31 +710,31 @@
 		var/mob/living/carbon/human/H = user
 		if(H.get_num_arms() == 0)
 			if(H.get_num_legs() != 0)
-				message_param = "tries to point at %t with a leg, <span class='danger'>falling down</span> in the process!"
+				message_param = "пытается показать на %t своей ногой и <span class='danger'>падает</span>!"
 				H.Paralyze(20)
 			else
-				message_param = "<span class='danger'>bumps [user.p_their()] head on the ground</span> trying to motion towards %t."
+				message_param = "<span class='danger'>стукается [user.p_their()] головой о землю,</span> пытаясь указывать ей на %t."
 				H.adjustOrganLoss(ORGAN_SLOT_BRAIN, 5)
 	..()
 
 /datum/emote/living/pout
 	key = "pout"
-	key_third_person = "pouts"
-	message = "pouts."
+	key_third_person = "дуется"
+	message = "дуется."
 	emote_type = EMOTE_AUDIBLE
 	show_runechat = FALSE
 
 /datum/emote/living/scream
 	key = "scream"
-	key_third_person = "screams"
-	message = "screams!"
-	message_mime = "acts out a scream!"
-	message_muffled = "makes a muffled noise in attempt to scream!"
+	key_third_person = "кричит"
+	message = "кричит!"
+	message_mime = "изображает крик!"
+	message_muffled = "издает приглушенный звук, пытаясь кричать!"
 	emote_type = EMOTE_AUDIBLE
 	show_runechat = FALSE
 
 /mob/living/carbon/human/verb/emote_scream()
-	set name = "Scream"
+	set name = "Кричать"
 	set category = "Noises"
 
 	emote("scream", intentional = TRUE)
@@ -745,7 +745,7 @@
 		var/mob/living/carbon/C = user
 		if(intentional)
 			if(!C.stamina_add(10))
-				to_chat(C, span_warning("I try to scream but my voice fails me."))
+				to_chat(C, span_warning("Я пытаюсь кричать, но у меня нет голоса."))
 				. = FALSE
 
 /datum/emote/living/scream/run_emote(mob/user, params, type_override, intentional, targetted)
@@ -755,7 +755,7 @@
 
 /datum/emote/living/scream/painscream
 	key = "painscream"
-	message = "screams in pain!"
+	message = "кричит от боли!"
 	emote_type = EMOTE_AUDIBLE
 	only_forced_audio = TRUE
 	show_runechat = FALSE
@@ -771,14 +771,14 @@
 
 /datum/emote/living/scream/strain
 	key = "strain"
-	message = "strains themselves!"
+	message = "напрягается!"
 	emote_type = EMOTE_AUDIBLE
 	only_forced_audio = TRUE
 	show_runechat = FALSE
 
 /datum/emote/living/scream/agony
 	key = "agony"
-	message = "screams in agony!"
+	message = "кричит в агонии!"
 	emote_type = EMOTE_AUDIBLE
 	only_forced_audio = TRUE
 	show_runechat = FALSE
@@ -897,12 +897,12 @@
 
 /datum/emote/living/rage
 	key = "rage"
-	message = "screams in rage!"
+	message = "кричит в ярости!"
 	emote_type = EMOTE_AUDIBLE
 	show_runechat = FALSE
 
 /mob/living/carbon/human/verb/emote_rage()
-	set name = "Rage"
+	set name = "Яростный крик"
 	set category = "Noises"
 
 	emote("rage", intentional = TRUE)
@@ -913,40 +913,40 @@
 		GLOB.azure_round_stats[STATS_WARCRIES]++
 
 /datum/emote/living/attnwhistle
-	key = "attnwhistle"
-	message = "whistles for attention!"
-	message_muffled = "makes a muffled noise."
+	key = "сattnwhistle"
+	message = "свистит, привлекая внимание!"
+	message_muffled = "издает приглушенный звук."
 	emote_type = EMOTE_AUDIBLE
 	show_runechat = FALSE
 
 /mob/living/carbon/human/verb/emote_attnwhistle()
-	set name = "Attnwhistle"
+	set name = "Свистнуть"
 	set category = "Noises"
 
 	emote("attnwhistle", intentional = TRUE)
 
 /datum/emote/living/choke
 	key = "choke"
-	key_third_person = "chokes"
-	message = "chokes!"
+	key_third_person = "задыхается"
+	message = "задыхается!"
 	emote_type = EMOTE_AUDIBLE
 	show_runechat = FALSE
 
 /datum/emote/living/scowl
 	key = "scowl"
-	key_third_person = "scowls"
-	message = "scowls."
+	key_third_person = "сердится"
+	message = "сердится."
 	emote_type = EMOTE_AUDIBLE
 	show_runechat = FALSE
 
 /datum/emote/living/shakehead
 	key = "shakehead"
-	key_third_person = "shakeshead"
-	message = "shakes their head."
+	key_third_person = "трясет головой"
+	message = "трясет головой."
 	emote_type = EMOTE_VISIBLE
 
 /mob/living/carbon/human/verb/emote_shakehead()
-	set name = "Shake Head"
+	set name = "Трясти головой"
 	set category = "Emotes"
 
 	emote("shakehead", intentional = TRUE)
@@ -954,12 +954,12 @@
 
 /datum/emote/living/shiver
 	key = "shiver"
-	key_third_person = "shiver"
-	message = "shivers."
+	key_third_person = "дрожит"
+	message = "дрожит."
 	emote_type = EMOTE_VISIBLE
 
 /mob/living/carbon/human/verb/emote_shiver()
-	set name = "Shiver"
+	set name = "Дрожать"
 	set category = "Emotes"
 
 	emote("shiver", intentional = TRUE)
@@ -967,124 +967,124 @@
 
 /datum/emote/living/sigh
 	key = "sigh"
-	key_third_person = "sighs"
-	message = "sighs."
-	message_muffled = "makes a muffled sigh."
+	key_third_person = "вздыхает"
+	message = "вздыхает."
+	message_muffled = "издает приглушенный вздох."
 	emote_type = EMOTE_AUDIBLE
 	show_runechat = FALSE
 
 /mob/living/carbon/human/verb/emote_sigh()
-	set name = "Sigh"
+	set name = "Вздохнуть"
 	set category = "Noises"
 
 	emote("sigh", intentional = TRUE)
 
 /datum/emote/living/whistle
 	key = "whistle"
-	key_third_person = "whistles"
-	message = "whistles."
-	message_muffled = "makes a muffled noise."
+	key_third_person = "насвистывает"
+	message = "насвистывает."
+	message_muffled = "издает приглушенный звук."
 	emote_type = EMOTE_AUDIBLE
 	show_runechat = FALSE
 
 /mob/living/carbon/human/verb/emote_whistle()
-	set name = "Whistle"
+	set name = "Насвистывать"
 	set category = "Noises"
 
 	emote("whistle", intentional = TRUE)
 
 /datum/emote/living/hmm
 	key = "hmm"
-	key_third_person = "hmms"
-	message = "hmms."
-	message_muffled = "makes a muffled hmm."
+	key_third_person = "хмм..."
+	message = "хмм..."
+	message_muffled = "издает приглушенный хмм..."
 	emote_type = EMOTE_AUDIBLE
 	show_runechat = FALSE
 
 /mob/living/carbon/human/verb/emote_hmm()
-	set name = "Hmm"
+	set name = "Хмм..."
 	set category = "Noises"
 
 	emote("hmm", intentional = TRUE)
 
 /datum/emote/living/huh
 	key = "huh"
-	key_third_person = "huhs"
-	message_muffled = "makes a muffled noise."
+	key_third_person = "?"
+	message_muffled = "издает приглушенный звук."
 	emote_type = EMOTE_AUDIBLE
 	nomsg = TRUE
 	show_runechat = FALSE
 
 /mob/living/carbon/human/verb/emote_huh()
-	set name = "Huh"
+	set name = "?"
 	set category = "Noises"
 
 	emote("huh", intentional = TRUE)
 
 /datum/emote/living/hum
 	key = "hum"
-	key_third_person = "hums"
-	message = "hums."
+	key_third_person = "напевает"
+	message = "напевает."
 	emote_type = EMOTE_AUDIBLE
-	message_muffled = "makes a muffled hum."
+	message_muffled = "издает приглушенное напевание."
 	show_runechat = FALSE
 
 /mob/living/carbon/human/verb/emote_hum()
-	set name = "Hum"
+	set name = "Напевать"
 	set category = "Noises"
 
 	emote("hum", intentional = TRUE)
 
 /datum/emote/living/smile
 	key = "smile"
-	key_third_person = "smiles"
-	message = "smiles."
+	key_third_person = "улыбается"
+	message = "улыбается."
 	emote_type = EMOTE_VISIBLE
 /mob/living/carbon/human/verb/emote_smile()
-	set name = "Smile"
+	set name = "Улыбнуться"
 	set category = "Emotes"
 
 	emote("smile", intentional = TRUE)
 
 /datum/emote/living/sneeze
 	key = "sneeze"
-	key_third_person = "sneezes"
-	message = "sneezes."
-	message_muffled = "makes a muffled sneeze."
+	key_third_person = "чихает"
+	message = "чихает."
+	message_muffled = "издает приглушенный чих."
 	emote_type = EMOTE_AUDIBLE
 	show_runechat = FALSE
 
 /datum/emote/living/shh
 	key = "shh"
-	key_third_person = "shhs"
-	message = "shooshes."
-	message_muffled = "makes a muffled shh."
+	key_third_person = "шипит"
+	message = "шипит."
+	message_muffled = "издает приглушенное шипение."
 	emote_type = EMOTE_AUDIBLE
 	show_runechat = FALSE
 
 /mob/living/carbon/human/verb/emote_shh()
-	set name = "Shh"
+	set name = "Тсс..."
 	set category = "Noises"
 
 	emote("shh", intentional = TRUE)
 
 /datum/emote/living/smug
 	key = "smug"
-	key_third_person = "smugs"
-	message = "grins smugly."
+	key_third_person = "гордится собой"
+	message = "самодовольно ухмыляется."
 
 /datum/emote/living/sniff
 	key = "sniff"
-	key_third_person = "sniffs"
-	message = "sniffs."
+	key_third_person = "нюхает"
+	message = "нюхает."
 	emote_type = EMOTE_AUDIBLE
 	show_runechat = FALSE
 
 /datum/emote/living/snore
 	key = "snore"
-	key_third_person = "snores"
-	message = "snores."
-	message_mime = "sleeps soundly."
+	key_third_person = "храпит"
+	message = "храпит."
+	message_mime = "громко храпит."
 	emote_type = EMOTE_AUDIBLE
 	stat_allowed = UNCONSCIOUS
 	snd_range = -4
@@ -1092,14 +1092,14 @@
 
 /datum/emote/living/stare
 	key = "stare"
-	key_third_person = "stares"
-	message = "stares."
-	message_param = "stares at %t."
+	key_third_person = "пялится"
+	message = "пялится."
+	message_param = "пялится на %t."
 
 /datum/emote/living/strech
 	key = "stretch"
-	key_third_person = "stretches"
-	message = "stretches their arms."
+	key_third_person = "потягивается"
+	message = "растягивает свои руки."
 
 /datum/emote/living/sulk
 	key = "sulk"
@@ -1108,74 +1108,74 @@
 
 /datum/emote/living/sway
 	key = "sway"
-	key_third_person = "sways"
-	message = "sways around dizzily."
+	key_third_person = "покачивается"
+	message = "покачивается."
 
 /datum/emote/living/tremble
 	key = "tremble"
-	key_third_person = "trembles"
-	message = "trembles in fear!"
+	key_third_person = "дрожжит"
+	message = "дрожжит в страхе!"
 
 /datum/emote/living/twitch
 	key = "twitch"
-	key_third_person = "twitches"
-	message = "twitches violently."
+	key_third_person = "дрожжит"
+	message = "сильно дрожжит."
 
 /datum/emote/living/twitch_s
 	key = "twitch_s"
-	message = "twitches."
+	message = "дрожжит."
 	stat_allowed = UNCONSCIOUS
 	mob_type_ignore_stat_typecache = list(/mob/living/carbon/human)
 
 /datum/emote/living/warcry
 	key = "warcry"
-	key_third_person = "warcrys"
-	message = "lets out an inspiring battle cry!"
+	key_third_person = "издает боевой клич"
+	message = "издает боевой клич!"
 	emote_type = EMOTE_AUDIBLE
-	message_muffled = "makes a muffled shout!"
+	message_muffled = "издает приглушенный ор!"
 	show_runechat = FALSE
 
 /mob/living/carbon/human/verb/emote_warcry()
-	set name = "Warcry"
+	set name = "Боевой клич"
 	set category = "Noises"
 
 	emote("warcry", intentional = TRUE)
 
 /datum/emote/living/wave
 	key = "wave"
-	key_third_person = "waves"
-	message = "waves."
+	key_third_person = "машет"
+	message = "машет."
 
 /datum/emote/living/whimper
 	key = "whimper"
-	key_third_person = "whimpers"
-	message = "whimpers."
-	message_mime = "appears hurt."
-	message_muffled = "makes a muffled whimper."
+	key_third_person = "хнычет"
+	message = "хнычет."
+	message_mime = "кажется раненным."
+	message_muffled = "издает приглушенный всхлип."
 	emote_type = EMOTE_AUDIBLE
 	show_runechat = FALSE
 
 /mob/living/carbon/human/verb/emote_whimper()
-	set name = "Whimper"
+	set name = "Хныкать"
 	set category = "Noises"
 
 	emote("whimper", intentional = TRUE)
 
 /datum/emote/living/wsmile
 	key = "wsmile"
-	key_third_person = "wsmiles"
-	message = "smiles weakly."
+	key_third_person = "слабо улыбается"
+	message = "слабо улыбается."
 
 /datum/emote/living/yawn
 	key = "yawn"
-	key_third_person = "yawns"
-	message = "yawns."
-	message_muffled = "makes a muffled yawn."
+	key_third_person = "зевает"
+	message = "зевает."
+	message_muffled = "издает приглушенный зевок."
 	emote_type = EMOTE_AUDIBLE
 	show_runechat = FALSE
 
 /mob/living/carbon/human/verb/emote_yawn()
-	set name = "Yawn"
+	set name = "Зевнуть"
 	set category = "Noises"
 
 	emote("yawn", intentional = TRUE)
@@ -1193,13 +1193,13 @@
 
 /datum/emote/living/custom/proc/check_invalid(mob/user, input)
 	. = TRUE
-	if(copytext(input,1,5) == "says")
+	if(copytext(input,1,5) == "гоыорит")
 		to_chat(user, span_danger("Invalid emote."))
-	else if(copytext(input,1,9) == "exclaims")
+	else if(copytext(input,1,9) == "восклицает")
 		to_chat(user, span_danger("Invalid emote."))
-	else if(copytext(input,1,6) == "yells")
+	else if(copytext(input,1,6) == "орёт")
 		to_chat(user, span_danger("Invalid emote."))
-	else if(copytext(input,1,5) == "asks")
+	else if(copytext(input,1,5) == "спрашивает")
 		to_chat(user, span_danger("Invalid emote."))
 	else
 		. = FALSE
@@ -1208,15 +1208,15 @@
 	if(!can_run_emote(user, TRUE, intentional))
 		return FALSE
 	if(is_banned_from(user.ckey, "Emote"))
-		to_chat(user, span_boldwarning("I cannot send custom emotes (banned)."))
+		to_chat(user, span_boldwarning("Я не могу отправлять эмоуты (забанен)."))
 		return FALSE
 	else if(QDELETED(user))
 		return FALSE
 	else if(user.client && user.client.prefs.muted & MUTE_IC)
-		to_chat(user, span_boldwarning("I cannot send IC messages (muted)."))
+		to_chat(user, span_boldwarning("Я не могу писать в IC (замучен)."))
 		return FALSE
 	else if(!params)
-		var/custom_emote = copytext(sanitize(input("What does your character do?") as text|null), 1, MAX_MESSAGE_LEN)
+		var/custom_emote = copytext(sanitize(input("что делает твой персонаж?") as text|null), 1, MAX_MESSAGE_LEN)
 		if(custom_emote && !check_invalid(user, custom_emote))
 /*			var/type = input("Is this a visible or hearable emote?") as null|anything in list("Visible", "Hearable")
 			switch(type)
@@ -1308,387 +1308,387 @@
 
 /datum/emote/living/shake
 	key = "shake"
-	key_third_person = "shakes"
-	message = "shakes their head."
+	key_third_person = "трясет головой"
+	message = "трясет головой."
 	emote_type = EMOTE_VISIBLE
 
 /mob/living/carbon/human/verb/emote_shake()
-	set name = "Shake Head"
+	set name = "Трясти головой"
 	set category = "Emotes"
 
 	emote("shake", intentional = TRUE)
 
 /datum/emote/living/squint
 	key = "squint"
-	key_third_person = "squints"
-	message = "squints their eyes."
+	key_third_person = "прищуривается"
+	message = "прищуривает свои глаза."
 	emote_type = EMOTE_VISIBLE
 
 /mob/living/carbon/human/verb/emote_squint()
-	set name = "Squint"
+	set name = "Прищуриться"
 	set category = "Emotes"
 
 	emote("squint", intentional = TRUE)
 
 /datum/emote/living/meow
 	key = "meow"
-	key_third_person = "meows!"
-	message = "meows!"
+	key_third_person = "мяукает!"
+	message = "мяукает!"
 	emote_type = EMOTE_AUDIBLE | EMOTE_VISIBLE
-	message_muffled = "makes a muffled sound!"
+	message_muffled = "издает приглушенный звук!"
 	vary = TRUE
 	show_runechat = FALSE
 	is_animal = TRUE
 
 /mob/living/carbon/human/verb/emote_meow()
 	if(istype(usr.getorganslot(ORGAN_SLOT_TONGUE), /obj/item/organ/tongue/wild_tongue))
-		set name = "Meow"
+		set name = "Мяукнуть"
 		set category = "Noises"
 		emote("meow", intentional = TRUE, animal = TRUE)
 	else
-		to_chat(usr, span_warning("Your tongue doesn't do that"))
+		to_chat(usr, span_warning("Твой язык не способен на это!"))
 		return
 
 /datum/emote/living/caw
 	key = "caw"
-	key_third_person = "caws!"
-	message = "caws!"
+	key_third_person = "каркает!"
+	message = "каркает!"
 	emote_type = EMOTE_AUDIBLE | EMOTE_VISIBLE
-	message_muffled = "makes a muffled sound!"
+	message_muffled = "издает приглушенный звук!"
 	vary = TRUE
 	show_runechat = FALSE
 	is_animal = TRUE
 
 /mob/living/carbon/human/verb/emote_caw()
 	if(istype(usr.getorganslot(ORGAN_SLOT_TONGUE), /obj/item/organ/tongue/wild_tongue))
-		set name = "Caw"
+		set name = "Каркать"
 		set category = "Noises"
 		emote("caw", intentional = TRUE, animal = TRUE)
 	else
-		to_chat(usr, span_warning("Your tongue doesn't do that"))
+		to_chat(usr, span_warning("Твой язык не способен на это!"))
 		return
 
 /datum/emote/living/peep
 	key = "peep"
-	key_third_person = "peeps!"
-	message = "peeps!"
+	key_third_person = "пищит!"
+	message = "пищит!"
 	emote_type = EMOTE_AUDIBLE | EMOTE_VISIBLE
-	message_muffled = "makes a muffled sound!"
+	message_muffled = "издает приглушенный звук!"
 	vary = TRUE
 	show_runechat = FALSE
 	is_animal = TRUE
 
 /mob/living/carbon/human/verb/emote_peep()
 	if(istype(usr.getorganslot(ORGAN_SLOT_TONGUE), /obj/item/organ/tongue/wild_tongue))
-		set name = "Peep"
+		set name = "Пиип"
 		set category = "Noises"
 		emote("peep", intentional = TRUE, animal = TRUE)
 	else
-		to_chat(usr, span_warning("Your tongue doesn't do that"))
+		to_chat(usr, span_warning("Твой язык не способен на это!"))
 		return
 
 /datum/emote/living/hoot
 	key = "hoot"
-	key_third_person = "hoots!"
-	message = "hoots!"
+	key_third_person = "Уву!"
+	message = "Уву!"
 	emote_type = EMOTE_AUDIBLE | EMOTE_VISIBLE
-	message_muffled = "makes a muffled sound!"
+	message_muffled = "издает приглушенный звук!"
 	vary = TRUE
 	show_runechat = FALSE
 	is_animal = TRUE
 
 /mob/living/carbon/human/verb/emote_hoot()
 	if(istype(usr.getorganslot(ORGAN_SLOT_TONGUE), /obj/item/organ/tongue/wild_tongue))
-		set name = "Hoot"
+		set name = "Увукнуть (как сова)"
 		set category = "Noises"
 		emote("hoot", intentional = TRUE, animal = TRUE)
 	else
-		to_chat(usr, span_warning("Your tongue doesn't do that"))
+		to_chat(usr, span_warning("Твой язык не способен на это!"))
 		return
 
 /datum/emote/living/squeak
 	key = "squeak"
-	key_third_person = "squeaks!"
-	message = "squeaks!"
+	key_third_person = "пищит!"
+	message = "пищит!"
 	emote_type = EMOTE_AUDIBLE | EMOTE_VISIBLE
-	message_muffled = "makes a muffled sound!"
+	message_muffled = "издает приглушенный звук!"
 	vary = TRUE
 	show_runechat = FALSE
 	is_animal = TRUE
 
 /mob/living/carbon/human/verb/emote_squeak()
 	if(istype(usr.getorganslot(ORGAN_SLOT_TONGUE), /obj/item/organ/tongue/wild_tongue))
-		set name = "Squeak"
+		set name = "Пищать"
 		set category = "Noises"
 		emote("squeak", intentional = TRUE, animal = TRUE)
 	else
-		to_chat(usr, span_warning("Your tongue doesn't do that"))
+		to_chat(usr, span_warning("Твой язык не способен на это!"))
 		return
 
 /datum/emote/living/hiss
 	key = "hiss"
-	key_third_person = "hisses!"
-	message = "hisses!"
+	key_third_person = "шипит!"
+	message = "шипит!"
 	emote_type = EMOTE_AUDIBLE | EMOTE_VISIBLE
-	message_muffled = "makes a muffled sound!"
+	message_muffled = "издает приглушенный звук!"
 	vary = TRUE
 	show_runechat = FALSE
 	is_animal = TRUE
 
 /mob/living/carbon/human/verb/emote_hiss()
 	if(istype(usr.getorganslot(ORGAN_SLOT_TONGUE), /obj/item/organ/tongue/wild_tongue))
-		set name = "Hiss"
+		set name = "Сссс"
 		set category = "Noises"
 		emote("hiss", intentional = TRUE, animal = TRUE)
 	else
-		to_chat(usr, span_warning("Your tongue doesn't do that"))
+		to_chat(usr, span_warning("Твой язык не способен на это!"))
 		return
 
 /datum/emote/living/phiss
 	key = "phiss"
-	key_third_person = "hisses!"
-	message = "hisses!"
+	key_third_person = "шипит!"
+	message = "шипит!"
 	emote_type = EMOTE_AUDIBLE | EMOTE_VISIBLE
-	message_muffled = "makes a muffled sound!"
+	message_muffled = "издает приглушенный звук!"
 	vary = TRUE
 	show_runechat = FALSE
 	is_animal = TRUE
 
 /mob/living/carbon/human/verb/emote_phiss()
 	if(istype(usr.getorganslot(ORGAN_SLOT_TONGUE), /obj/item/organ/tongue/wild_tongue))
-		set name = "PHiss"
+		set name = "Шипеть"
 		set category = "Noises"
 		emote("phiss", intentional = TRUE, animal = TRUE)
 	else
-		to_chat(usr, span_warning("Your tongue doesn't do that"))
+		to_chat(usr, span_warning("Твой язык не способен на это!"))
 		return
 
 /datum/emote/living/roar
 	key = "roar"
-	key_third_person = "roars!"
-	message = "roars!"
+	key_third_person = "рычит!"
+	message = "рычит!"
 	emote_type = EMOTE_AUDIBLE | EMOTE_VISIBLE
-	message_muffled = "makes a muffled sound!"
+	message_muffled = "издает приглушенное рычание!"
 	vary = TRUE
 	show_runechat = FALSE
 
 /mob/living/carbon/human/verb/emote_roar()
 	if(istype(usr.getorganslot(ORGAN_SLOT_TONGUE), /obj/item/organ/tongue/wild_tongue))
-		set name = "Roar"
+		set name = "Издать рык"
 		set category = "Noises"
 		emote("roar", intentional = TRUE)
 	else
-		to_chat(usr, span_warning("Your tongue doesn't do that"))
+		to_chat(usr, span_warning("Твой язык не способен на это!"))
 		return
 
 /datum/emote/living/howl
 	key = "howl"
-	key_third_person = "howls!"
-	message = "howls!"
+	key_third_person = "воет!"
+	message = "воет!"
 	emote_type = EMOTE_AUDIBLE | EMOTE_VISIBLE
-	message_muffled = "makes a muffled sound!"
+	message_muffled = "издает приглушенный звук!"
 	vary = TRUE
 	show_runechat = FALSE
 	is_animal = TRUE
 
 /mob/living/carbon/human/verb/emote_howl()
 	if(istype(usr.getorganslot(ORGAN_SLOT_TONGUE), /obj/item/organ/tongue/wild_tongue))
-		set name = "Howl"
+		set name = "Выть"
 		set category = "Noises"
 		emote("howl", intentional = TRUE, animal = TRUE)
 	else
-		to_chat(usr, span_warning("Your tongue doesn't do that"))
+		to_chat(usr, span_warning("Твой язык не способен на это!"))
 		return
 
 /datum/emote/living/cackle
 	key = "cackle"
-	key_third_person = "cackles!"
-	message = "cackles!"
+	key_third_person = "кудахчет!"
+	message = "кудахчет!"
 	emote_type = EMOTE_AUDIBLE | EMOTE_VISIBLE
-	message_muffled = "makes a muffled sound!"
+	message_muffled = "издает приглушенный звук!"
 	vary = TRUE
 	show_runechat = FALSE
 	is_animal = TRUE
 
 /mob/living/carbon/human/verb/emote_cackle()
 	if(istype(usr.getorganslot(ORGAN_SLOT_TONGUE), /obj/item/organ/tongue/wild_tongue))
-		set name = "Cackle"
+		set name = "Кудахкать"
 		set category = "Noises"
 		emote("cackle", intentional = TRUE, animal = TRUE)
 	else
-		to_chat(usr, span_warning("Your tongue doesn't do that"))
+		to_chat(usr, span_warning("Твой язык не способен на это!"))
 		return
 
 /datum/emote/living/whine
 	key = "whine"
-	key_third_person = "whines."
-	message = "whines."
+	key_third_person = "скулит."
+	message = "скулит."
 	emote_type = EMOTE_AUDIBLE | EMOTE_VISIBLE
-	message_muffled = "makes a muffled sound!"
+	message_muffled = "издает приглушенный звук!"
 	vary = TRUE
 	show_runechat = FALSE
 	is_animal = TRUE
 
 /mob/living/carbon/human/verb/emote_whine()
 	if(istype(usr.getorganslot(ORGAN_SLOT_TONGUE), /obj/item/organ/tongue/wild_tongue))
-		set name = "Whine"
+		set name = "Скулить"
 		set category = "Noises"
 		emote("whine", intentional = TRUE, animal = TRUE)
 	else
-		to_chat(usr, span_warning("Your tongue doesn't do that"))
+		to_chat(usr, span_warning("Твой язык не способен на это!"))
 		return
 
 /datum/emote/living/trill
 	key = "trill"
-	key_third_person = "trills!"
-	message = "trills!"
+	key_third_person = "трещит!"
+	message = "трещит!"
 	emote_type = EMOTE_AUDIBLE | EMOTE_VISIBLE
-	message_muffled = "makes a muffled sound!"
+	message_muffled = "издает приглушенный звук!"
 	vary = TRUE
 	show_runechat = FALSE
 	is_animal = TRUE
 
 /mob/living/carbon/human/verb/emote_trill()
 	if(istype(usr.getorganslot(ORGAN_SLOT_TONGUE), /obj/item/organ/tongue/wild_tongue))
-		set name = "Trill"
+		set name = "Трелль"
 		set category = "Noises"
 		emote("trill", intentional = TRUE, animal = TRUE)
 	else
-		to_chat(usr, span_warning("Your tongue doesn't do that"))
+		to_chat(usr, span_warning("Твой язык не способен на это!"))
 		return
 
 /datum/emote/living/snap
 	key = "snap"
-	key_third_person = "finger snaps!"
-	message = "finger snaps!"
+	key_third_person = "щелкает пальцем!"
+	message = "щелкает пальцем!"
 	emote_type = EMOTE_AUDIBLE | EMOTE_VISIBLE
 	show_runechat = FALSE
 
 /mob/living/carbon/human/verb/emote_snap()
-	set name = "Snap"
+	set name = "Щелчок"
 	set category = "Noises"
 
 	emote("snap", intentional = TRUE)
 
 /datum/emote/living/blink
 	key = "blink"
-	key_third_person = "blinks."
-	message = "blinks."
+	key_third_person = "моргает."
+	message = "моргает."
 	emote_type = EMOTE_VISIBLE
 	show_runechat = FALSE
 
 /mob/living/carbon/human/verb/emote_blink()
-	set name = "Blink"
+	set name = "Моргнуть"
 	set category = "Noises"
 
 	emote("blink", intentional = TRUE)
 
 /datum/emote/living/snap2
 	key = "snap2"
-	key_third_person = "finger snaps twice!"
-	message = "finger snaps twice!"
+	key_third_person = "щелкает пальцем дважды!"
+	message = "щелкает пальцем дважды!"
 	emote_type = EMOTE_AUDIBLE | EMOTE_VISIBLE
 	show_runechat = FALSE
 
 /mob/living/carbon/human/verb/emote_snap2()
-	set name = "Snap2"
+	set name = "Двойной щелчок"
 	set category = "Noises"
 
 	emote("snap2", intentional = TRUE)
 
 /datum/emote/living/snap3
 	key = "snap3"
-	key_third_person = "finger snaps thrice!"
-	message = "finger snaps thrice!"
+	key_third_person = "щелкает пальцем трижды!"
+	message = "щелкает пальцем трижды!"
 	emote_type = EMOTE_AUDIBLE | EMOTE_VISIBLE
 	show_runechat = FALSE
 
 /mob/living/carbon/human/verb/emote_snap3()
-	set name = "Snap3"
+	set name = "Тройной щелчок"
 	set category = "Noises"
 
 	emote("snap3", intentional = TRUE)
 
 /datum/emote/living/purr
 	key = "purr"
-	key_third_person = "purrs!"
-	message = "purrs!"
+	key_third_person = "мурчит!"
+	message = "мурчит!"
 	emote_type = EMOTE_AUDIBLE | EMOTE_VISIBLE
-	message_muffled = "makes a muffled sound!"
+	message_muffled = "мурчит!"
 	vary = TRUE
 	show_runechat = FALSE
 	is_animal = TRUE
 
 /mob/living/carbon/human/verb/emote_purr()
 	if(istype(usr.getorganslot(ORGAN_SLOT_TONGUE), /obj/item/organ/tongue/wild_tongue))
-		set name = "Purr"
+		set name = "Мурчать"
 		set category = "Noises"
 		emote("purr", intentional = TRUE, animal = TRUE)
 	else
-		to_chat(usr, span_warning("Your tongue doesn't do that"))
+		to_chat(usr, span_warning("Твой язык не способен на это!"))
 		return
 
 /datum/emote/living/moo
 	key = "moo"
-	key_third_person = "moos!"
-	message = "moos!"
+	key_third_person = "мычит!"
+	message = "мычит!"
 	emote_type = EMOTE_AUDIBLE | EMOTE_VISIBLE
-	message_muffled = "makes a muffled sound!"
+	message_muffled = "издает приглушенный звук!"
 	vary = TRUE
 	show_runechat = FALSE
 	is_animal = TRUE
 
 /mob/living/carbon/human/verb/emote_moo()
 	if(istype(usr.getorganslot(ORGAN_SLOT_TONGUE), /obj/item/organ/tongue/wild_tongue))
-		set name = "Moo"
+		set name = "Муу"
 		set category = "Noises"
 		emote("moo", intentional = TRUE, animal = TRUE)
 	else
-		to_chat(usr, span_warning("Your tongue doesn't do that"))
+		to_chat(usr, span_warning("Твой язык не способен на это!"))
 		return
 
 /datum/emote/living/bark
 	key = "bark"
-	key_third_person = "barks!"
-	message = "barks!"
+	key_third_person = "гавкает!"
+	message = "гавкает!"
 	emote_type = EMOTE_AUDIBLE | EMOTE_VISIBLE
-	message_muffled = "makes a muffled sound!"
+	message_muffled = "издает приглушенный звук!"
 	vary = TRUE
 	show_runechat = FALSE
 	is_animal = TRUE
 
 /mob/living/carbon/human/verb/emote_bark()
 	if(istype(usr.getorganslot(ORGAN_SLOT_TONGUE), /obj/item/organ/tongue/wild_tongue))
-		set name = "Bark"
+		set name = "Гавкать"
 		set category = "Noises"
 		emote("bark", intentional = TRUE, animal = TRUE)
 	else
-		to_chat(usr, span_warning("Your tongue doesn't do that"))
+		to_chat(usr, span_warning("Твой язык не способен на это!"))
 		return
 
 /datum/emote/living/growl
 	key = "growl"
-	key_third_person = "growls!"
-	message = "growls!"
+	key_third_person = "рычит!"
+	message = "рычит!"
 	emote_type = EMOTE_AUDIBLE | EMOTE_VISIBLE
-	message_muffled = "makes a muffled sound!"
+	message_muffled = "издает приглушенный звук!"
 	vary = TRUE
 	show_runechat = FALSE
 	is_animal = TRUE
 
 /mob/living/carbon/human/verb/emote_growl()
 	if(istype(usr.getorganslot(ORGAN_SLOT_TONGUE), /obj/item/organ/tongue/wild_tongue))
-		set name = "Growl"
+		set name = "Рычать"
 		set category = "Noises"
 		emote("growl", intentional = TRUE, animal = TRUE)
 	else
-		to_chat(usr, span_warning("Your tongue doesn't do that"))
+		to_chat(usr, span_warning("Твой язык не способен на это!"))
 		return
 
 /datum/emote/living/bleat
 	key = "bleat"
-	key_third_person = "bleats!"
-	message = "bleats!"
+	key_third_person = "блеет!"
+	message = "блеет!"
 	emote_type = EMOTE_AUDIBLE | EMOTE_VISIBLE
 	message_muffled = "makes a muffled sound!"
 	vary = TRUE
@@ -1697,46 +1697,46 @@
 
 /mob/living/carbon/human/verb/emote_bleat()
 	if(istype(usr.getorganslot(ORGAN_SLOT_TONGUE), /obj/item/organ/tongue/wild_tongue))
-		set name = "Bleat"
+		set name = "Блееть"
 		set category = "Noises"
 		emote("bleat", intentional = TRUE, animal = TRUE)
 	else
-		to_chat(usr, span_warning("Your tongue doesn't do that"))
+		to_chat(usr, span_warning("Твой язык не способен на это!"))
 		return
 
 /datum/emote/living/chitter
 	key = "chitter"
-	key_third_person = "chitters!"
-	message = "chitters!"
+	key_third_person = "стрекочет!"
+	message = "стрекочет!"
 	emote_type = EMOTE_AUDIBLE | EMOTE_VISIBLE
-	message_muffled = "makes a muffled chitter!"
+	message_muffled = "издает приглушенный треск!"
 	vary = TRUE
 	show_runechat = FALSE
 	is_animal = TRUE
 
 /mob/living/carbon/human/verb/emote_chitter()
 	if(istype(usr.getorganslot(ORGAN_SLOT_TONGUE), /obj/item/organ/tongue/moth))
-		set name = "Chitter"
+		set name = "Стрекотать"
 		set category = "Noises"
 		emote("chitter", intentional = TRUE, animal = TRUE)
 	else
-		to_chat(usr, span_warning("Your tongue doesn't do that"))
+		to_chat(usr, span_warning("Твой язык не способен на это!"))
 		return
 
 /datum/emote/living/flutter
 	key = "flutter"
-	key_third_person = "flutters!"
-	message = "flutters!"
+	key_third_person = "Порхает крыльями!"
+	message = "Порхает крыльями!"
 	emote_type = EMOTE_AUDIBLE | EMOTE_VISIBLE
 	show_runechat = FALSE
 
 /mob/living/carbon/human/verb/emote_flutter()
 	if(istype(usr.getorganslot(ORGAN_SLOT_TONGUE), /obj/item/organ/tongue/moth))
-		set name = "Flutter"
+		set name = "Порхать"
 		set category = "Noises"
 		emote("flutter", intentional = TRUE)
 	else
-		to_chat(usr, span_warning("Your back doesn't do that"))
+		to_chat(usr, span_warning("Твоя спина не способна на это!"))
 		return
 
 /datum/emote/living/fsalute
@@ -1752,7 +1752,7 @@
 		user.play_overhead_indicator('icons/mob/overhead_effects.dmi', "stress", 15, MUTATIONS_LAYER, private = user.patron.type, soundin = 'sound/magic/holyshield.ogg', y_offset = 32)
 
 /mob/living/carbon/human/verb/emote_fsalute()
-	set name = "Faith Salute"
+	set name = "Приветствие веры"
 	set category = "Emotes"
 
 	emote("fsalute", intentional =  TRUE)
@@ -1773,4 +1773,3 @@
 	set category = "Emotes"
 
 	emote("ffsalute", intentional =  TRUE)
-*/

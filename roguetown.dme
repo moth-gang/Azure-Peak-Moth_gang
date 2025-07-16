@@ -2467,4 +2467,7 @@
 #include "modular_hearthstone\code\modules\reagents\reagent_containers\lux.dm"
 #include "modulargoonpeak\modules\armor\code\armor.dm"
 #include "modulargoonpeak\modules\armor\code\pants.dm"
+#include "modulargoonpeak\modules\translite\code\emote.dm"
+#include "modulargoonpeak\modules\translite\code\emote_c.dm"
+#include "modulargoonpeak\modules\translite\code\emote_h.dm"
 // END_INCLUDE
