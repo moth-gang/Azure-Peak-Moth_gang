@@ -2474,4 +2474,5 @@
 #include "modulargoonpeak\modules\armor\code\pants.dm"
 #include "modulargoonpeak\modules\sexcon\code\genitals.dm"
 #include "modulargoonpeak\modules\sexcon\code\sexcon.dm"
+#include "modulargoonpeak\modules\craft\code\leather_armor_recipes.dm"
 // END_INCLUDE
