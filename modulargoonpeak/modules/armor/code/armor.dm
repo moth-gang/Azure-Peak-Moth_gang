@@ -30,3 +30,17 @@
 
 /obj/item/clothing/suit/roguetown/shirt/robe/spellcasterrobe
 	icon = 'modulargoonpeak/modules/armor/icons/obj/clothing/armor.dmi'
+/obj/item/clothing/suit/roguetown/shirt/jacket_lether
+	slot_flags = ITEM_SLOT_ARMOR|ITEM_SLOT_SHIRT|ITEM_SLOT_CLOAK
+	name = "кожаная куртка"
+	desc = "кожанка, созданная из сыромятой кожи"
+	body_parts_covered = CHEST|GROIN
+	icon = 'modulargoonpeak/modules/armor/icons/obj/clothing/armor.dmi'
+	icon_state = "jacketlether"
+	mob_overlay_icon = 'modulargoonpeak/modules/armor/icons/obj/clothing/on_mob/armor.dmi'
+	sleeved = 'modulargoonpeak/modules/armor/icons/obj/clothing/on_mob/sleeves_armor.dmi'
+	boobed = TRUE
+	flags_inv = HIDEBOOB|HIDECROTCH
+	r_sleeve_status = SLEEVE_NORMAL
+	l_sleeve_status = SLEEVE_NORMAL
+	var/fanatic_wear = FALSE
