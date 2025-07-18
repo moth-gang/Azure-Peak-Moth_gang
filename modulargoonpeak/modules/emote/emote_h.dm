@@ -1,14 +1,14 @@
-/*datum/emote/living/carbon/human
+/datum/emote/living/carbon/human
 	mob_type_allowed_typecache = list(/mob/living/carbon/human)
 
 /datum/emote/living/carbon/human/cry
 	key = "cry"
-	key_third_person = "cries"
-	message = "cries."
+	key_third_person = "плачет"
+	message = "плачет."
 	emote_type = EMOTE_AUDIBLE
 
 /mob/living/carbon/human/verb/emote_cry()
-	set name = "Cry"
+	set name = "Плакать"
 	set category = "Noises"
 
 	emote("cry", intentional = TRUE)
@@ -18,7 +18,7 @@
 	if(. && iscarbon(user))
 		var/mob/living/carbon/C = user
 		if(C.silent || !C.can_speak())
-			message = "makes a noise. Tears stream down their face."
+			message = "издает сдавленный звук. Слезы стекают по лицу."
 
 
 /datum/emote/living/carbon/human/sexmoanlight
@@ -32,7 +32,7 @@
 	if(. && iscarbon(user))
 		var/mob/living/carbon/C = user
 		if(C.silent || !C.can_speak())
-			message = "makes a noise."
+			message = "издает шум."
 
 /datum/emote/living/carbon/human/sexmoanhvy
 	key = "sexmoanhvy"
@@ -45,79 +45,78 @@
 	if(. && iscarbon(user))
 		var/mob/living/carbon/C = user
 		if(C.silent || !C.can_speak())
-			message = "makes a noise."
+			message = "издает шум."
 
 /datum/emote/living/carbon/human/eyebrow
 	key = "eyebrow"
-	message = "raises an eyebrow."
+	message = "поднимает бровь."
 	emote_type = EMOTE_VISIBLE
 
 /mob/living/carbon/human/verb/emote_eyebrow()
-	set name = "Raise Eyebrow"
+	set name = "Поднять бровь"
 	set category = "Emotes"
 
 	emote("eyebrow", intentional = TRUE)
 
 /datum/emote/living/carbon/human/psst
 	key = "psst"
-	key_third_person = "pssts"
+	key_third_person = "псст"
 	emote_type = EMOTE_AUDIBLE
 	nomsg = TRUE
 
 /mob/living/carbon/human/verb/emote_psst()
-	set name = "Psst"
+	set name = "Псст"
 	set category = "Noises"
 
 	emote("psst", intentional = TRUE)
 
 /datum/emote/living/carbon/human/grumble
 	key = "grumble"
-	key_third_person = "grumbles"
-	message = "grumbles."
-	message_muffled = "makes a grumbling noise."
+	key_third_person = "ворчит"
+	message = "ворчит."
+	message_muffled = "издает тихое ворчание."
 	emote_type = EMOTE_AUDIBLE
 
 /mob/living/carbon/human/verb/emote_grumble()
-	set name = "Grumble"
+	set name = "Ворчать"
 	set category = "Noises"
 
 	emote("grumble", intentional = TRUE)
 
 /datum/emote/living/carbon/human/handshake
 	key = "handshake"
-	message = "shakes their own hands."
-	message_param = "shakes hands with %t."
+	message = "пожимает свою же руку."
+	message_param = "пожимает руку %t."
 	restraint_check = TRUE
 	emote_type = EMOTE_AUDIBLE
 
-
 /datum/emote/living/carbon/human/mumble
 	key = "mumble"
-	key_third_person = "mumbles"
-	message = "mumbles."
+	key_third_person = "бормочет"
+	message = "бормочет."
 	emote_type = EMOTE_AUDIBLE
 
 /datum/emote/living/carbon/human/pale
 	key = "pale"
-	message = "goes pale for a second."
+	message = "бледнеет на секунду."
 
 /datum/emote/living/carbon/human/raise
 	key = "raise"
-	key_third_person = "raises"
-	message = "raises a hand."
+	key_third_person = "поднимает руку"
+	message = "поднимает руку."
 	restraint_check = TRUE
 
 /datum/emote/living/carbon/human/salute
 	key = "salute"
-	key_third_person = "salutes"
-	message = "salutes."
-	message_param = "salutes to %t."
+	key_third_person = "салютует"
+	message = "салютует."
+	message_param = "салютует в сторону %t."
 	restraint_check = TRUE
 
 /datum/emote/living/carbon/human/shrug
 	key = "shrug"
-	key_third_person = "shrugs"
-	message = "shrugs."
+	key_third_person = "пожимает плечами"
+	message = "пожимает плечами."
 
 /datum/emote/living/carbon/human/wag
 	key = "wag"
@@ -152,12 +151,11 @@
 
 /datum/emote/living/carbon/human/wing
 	key = "wing"
-	key_third_person = "wings"
-	message = "flaps their wings."
+	key_third_person = "машет крыльями"
+	message = "машет крыльями."
 
 /mob/living/carbon/human/proc/OpenWings()
 	return
 
 /mob/living/carbon/human/proc/CloseWings()
 	return
-*/
