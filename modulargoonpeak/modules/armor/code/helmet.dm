@@ -9,7 +9,7 @@
 	smeltresult = /obj/item/ingot/steel
 	flags_inv = HIDEFACE|HIDESNOUT|HIDEHAIR
 	slot_flags = ITEM_SLOT_HEAD|ITEM_SLOT_HIP
-	body_parts_covered = HEAD|HAIR|EARS
+	body_parts_covered = HEAD | MOUTH | NOSE | EYES | EARS | NECK
 	grid_height = 64
 	grid_width = 64
 	sleevetype = null
