@@ -32,8 +32,8 @@
 	icon = 'modulargoonpeak/modules/armor/icons/obj/clothing/armor.dmi'
 /obj/item/clothing/suit/roguetown/shirt/jacket_lether
 	slot_flags = ITEM_SLOT_ARMOR|ITEM_SLOT_SHIRT|ITEM_SLOT_CLOAK
-	name = "кожаная куртка"
-	desc = "кожанка, созданная из сыромятой кожи"
+	name = "leather jacket"
+	desc = "leather jacket"
 	body_parts_covered = CHEST|GROIN
 	icon = 'modulargoonpeak/modules/armor/icons/obj/clothing/armor.dmi'
 	icon_state = "jacketlether"
