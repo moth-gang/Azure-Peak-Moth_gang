@@ -1,4 +1,4 @@
-/*datum/emote/living/carbon
+/datum/emote/living/carbon
 	mob_type_allowed_typecache = list(/mob/living/carbon)
 
 /datum/emote/living/carbon/deathgurgle
@@ -7,51 +7,51 @@
 	emote_type = EMOTE_AUDIBLE
 	only_forced_audio = TRUE
 	vary = TRUE
-	message = "gasps out their last breath."
+	message = "испускает последний вздох."
 	message_simple =  "falls limp."
 	stat_allowed = UNCONSCIOUS
 	mob_type_ignore_stat_typecache = list(/mob/living/carbon/human)
 
 /datum/emote/living/carbon/airguitar
 	key = "airguitar"
-	message = "strums an invisible lute."
+	message = "играет на невидимой лютне."
 	restraint_check = TRUE
 
 /datum/emote/living/carbon/blink
 	key = "blink"
-	key_third_person = "blinks"
-	message = "blinks."
+	key_third_person = "моргает"
+	message = "моргает."
 
 /datum/emote/living/carbon/blink_r
 	key = "blink_r"
-	message = "blinks rapidly."
+	message = "быстро моргает."
 
 /datum/emote/living/carbon/clap
 	key = "clap"
-	key_third_person = "claps"
-	message = "claps."
+	key_third_person = "хлопает"
+	message = "хлопает."
 	muzzle_ignore = TRUE
 	restraint_check = TRUE
 	emote_type = EMOTE_AUDIBLE
 	vary = TRUE
 
 /mob/living/carbon/human/verb/emote_clap()
-	set name = "Clap"
+	set name = "Хлопать"
 	set category = "Noises"
 
 	emote("clap", intentional = TRUE)
 
 /datum/emote/living/carbon/gnarl
 	key = "gnarl"
-	key_third_person = "gnarls"
-	message = "gnarls and shows its teeth..."
+	key_third_person = "скалится"
+	message = "скалится и показывает свои зубы..."
 	mob_type_allowed_typecache = list(/mob/living/carbon/monkey)
 
 /datum/emote/living/moan
 	key = "moan"
-	key_third_person = "moans"
-	message = "moans."
-	message_mime = "appears to moan!"
+	key_third_person = "стонет"
+	message = "стонет."
+	message_mime = "изображает стон!"
 	emote_type = EMOTE_AUDIBLE
 
 /datum/emote/living/carbon/roll
@@ -102,4 +102,3 @@
 	key = "wink"
 	key_third_person = "winks"
 	message = "winks."
-*/
